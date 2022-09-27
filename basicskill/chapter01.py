@@ -90,3 +90,22 @@ sum1 = 3 + 2
 print(f"sum type: {type(sum1)}") #类型为int
 sum2 = 3 + 2.0
 print(f"sum type: {type(sum2)}") #类型为float
+
+
+"""
+字符串
+一段文本就是字符串，字符串不支持算术运算符.
+"""
+strValue = "我是字符串, you can print out me in console !!!"
+print(strValue)
+
+strValue = "我是字符串, please call me \"String' "
+print(strValue)
+
+strValue = '我是字符串, please call me \"String\''
+print(strValue)
+
+# 两个字符串可以用 + 进行拼接，而不是加法.
+strValue = "我是字符串"
+strValue += ", 你猜为什么我也支持加法操作符?"
+print(strValue)
