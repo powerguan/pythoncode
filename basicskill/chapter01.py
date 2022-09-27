@@ -1,12 +1,19 @@
 
 """
-本文件讲解变量,简单数据类型.
-[简单数据类型]
-python是无类型语言，意思是定义变量时不需要指定类型，python解释器能自动推导变量的类型.
-[例子]
+本文件包含以下内容.
+1. 变量;
+2. 数字;
+3. 字符串;
+4. 运算符;
+5. 位运算符;
 """
 
-# 2杯12.8的拿铁咖啡
+"""
+1. 变量与类型
+python是无类型语言，意思是定义变量时不需要指定类型，python解释器能自动推导变量的类型.
+2杯12.8的拿铁咖啡
+"""
+
 coffeeType = "拿铁"  #赋值语句 也可以叫做 一个表达式, 等号左边是变量，等号右边是值
 coffeePrice = 12.8
 coffeeCount = 2
@@ -30,8 +37,56 @@ print(f"coffeeCount is: {type(coffeeCount)}")
 
 """
 [总结]
-1. 定义变量的命名规范是，以小写字母开头的名词;
-2. 函数是以小写字母开头的动词;
+1. 定义变量的命名规范是，以小写字母开头的名词, 由字母，数字和下划线组成;
+2. 函数是以小写字母开头的动词, 由字母，数字和下划线组成;
 3. 变量的类型是由python根据code上下文自动推导，程序员心里是要知道变量在某个位置是什么类型的数据;
 4. python的简单数据类型有三种: string, float, int;
 """
+
+"""
+2. 数字类型
+a. Int， b. Float
+支持 加减乘除运算
+"""
+sumValue = 10 + 5
+subValue = 10 - 3
+mulValue = 10 * 2
+divValue = 10 / 2
+roundValue = 10 // 3
+modValue = 10 % 3
+expValue = 10 ** 3
+print(f"sumValue = {sumValue}")
+print(f"subValue = {subValue}")
+print(f"mulValue = {mulValue}")
+print(f"divValue = {divValue}")
+print(f"roundValue = {roundValue}")
+print(f"modValue = {modValue}")
+print(f"expValue = {expValue}")
+print("*****end of first calculate******")
+
+sumValue += 5   # sumValue = sumValue + 5
+subValue -= 2   # sumValue = sumValue - 2
+mulValue *= 2   # sumValue = sumValue * 2
+divValue /= 2   # sumValue = sumValue / 2
+roundValue //= 2 # sumValue = sumValue // 2
+modValue %= 2   # sumValue = sumValue % 2
+expValue **= 2  # sumValue = sumValue ** 2
+print(f"sumValue = {sumValue}")
+print(f"subValue = {subValue}")
+print(f"mulValue = {mulValue}")
+print(f"divValue = {divValue}")
+print(f"roundValue = {roundValue}")
+print(f"modValue = {modValue}")
+print(f"expValue = {expValue}")
+print("*****end of second calculate******")
+
+"""
+[隐式类型转换]
+在计算机里float占的字节数比int多，也就是float比int可以存储更大的数。所有的编程语言在处理数字运算时都会将占位少的数字类型转化为占位大的。
+3+2=5 : 因为3和2都是int，所以相加时都以int类型做运算,其结果也是int;
+3+2.0=5.0 : 因为3是int，2.0是float，在运算之前需要把3转化为float（3.0），然后在做加法运算，得到的结果也是float。计算机不会像人一样发现结果是int就记为整数，只会严格遵守计算前的数据类型.
+"""
+sum1 = 3 + 2
+print(f"sum type: {type(sum1)}") #类型为int
+sum2 = 3 + 2.0
+print(f"sum type: {type(sum2)}") #类型为float
