@@ -1,4 +1,3 @@
-
 """
 本文件包含以下内容.
 1. 变量;
@@ -14,7 +13,7 @@ python是无类型语言，意思是定义变量时不需要指定类型，pytho
 2杯12.8的拿铁咖啡
 """
 
-coffeeType = "拿铁"  #赋值语句 也可以叫做 一个表达式, 等号左边是变量，等号右边是值
+coffeeType = "拿铁"  # 赋值语句 也可以叫做 一个表达式, 等号左边是变量，等号右边是值
 coffeePrice = 12.8
 coffeeCount = 2
 
@@ -64,12 +63,12 @@ print(f"modValue = {modValue}")
 print(f"expValue = {expValue}")
 print("*****end of first calculate******")
 
-sumValue += 5   # sumValue = sumValue + 5
-subValue -= 2   # sumValue = sumValue - 2
-mulValue *= 2   # sumValue = sumValue * 2
-divValue /= 2   # sumValue = sumValue / 2
-roundValue //= 2 # sumValue = sumValue // 2
-modValue %= 2   # sumValue = sumValue % 2
+sumValue += 5  # sumValue = sumValue + 5
+subValue -= 2  # sumValue = sumValue - 2
+mulValue *= 2  # sumValue = sumValue * 2
+divValue /= 2  # sumValue = sumValue / 2
+roundValue //= 2  # sumValue = sumValue // 2
+modValue %= 2  # sumValue = sumValue % 2
 expValue **= 2  # sumValue = sumValue ** 2
 print(f"sumValue = {sumValue}")
 print(f"subValue = {subValue}")
@@ -87,10 +86,9 @@ print("*****end of second calculate******")
 3+2.0=5.0 : 因为3是int，2.0是float，在运算之前需要把3转化为float（3.0），然后在做加法运算，得到的结果也是float。计算机不会像人一样发现结果是int就记为整数，只会严格遵守计算前的数据类型.
 """
 sum1 = 3 + 2
-print(f"sum type: {type(sum1)}") #类型为int
+print(f"sum type: {type(sum1)}")  # 类型为int
 sum2 = 3 + 2.0
-print(f"sum type: {type(sum2)}") #类型为float
-
+print(f"sum type: {type(sum2)}")  # 类型为float
 
 """
 字符串
@@ -107,5 +105,40 @@ print(strValue)
 
 # 两个字符串可以用 + 进行拼接，而不是加法.
 strValue = "我是字符串"
-strValue += ", 你猜为什么我也支持加法操作符?"
+strValue += ", 你猜为什么我也支持加法操作符?"  # strValue = strValue + ", 你猜为什么我也支持加法操作符?"
 print(strValue)
+
+# 字符串常用函数
+# join: 将字符串数组的所有成员拼接
+strValue = ".".join(["I am programmer", "join", "my name is Jason"])
+print(strValue)
+# split: 将字符串按照某个字符切分成数组
+items = strValue.split(" ")
+print(items)
+# len: 取字符串长度
+print("strValue = {len(strValue)}")
+print(f"strValue = {len(strValue)}") #字符串 插值法
+# [start:end:stpe]： 取子串操作
+strValue = "1234567890"
+print(f"{strValue[0:5:1]}")
+print(f"{strValue[0:5:2]}")
+print(f"{strValue[::-1]}")
+# startWith: 判断字符串是否以某个字串开头
+print(f"start with '123': {strValue.startswith('123')}")
+print(f"end with '890': {strValue.endswith('890')}")
+
+"""
+字符串与数字间互相转换
+"""
+# 字符串转整数 int()
+strValue = "110"
+numValue = int(strValue)
+print(f"{numValue} * 2 = {numValue * 2}")
+
+# 整数转字符串 str()
+numValue = 120
+strValue = str(numValue)
+print(f"strValue type is: {type(strValue)}")
+
+
+print(f"have a good day")
