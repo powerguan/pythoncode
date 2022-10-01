@@ -87,7 +87,7 @@ for i in range(1, 10):
     print()
 
 """
-异常捕获
+异常捕获 .
 try - except
 """
 try:
