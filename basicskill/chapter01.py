@@ -47,7 +47,7 @@ print(f"coffeeCount is: {type(coffeeCount)}")
 a. Int， b. Float
 支持 加减乘除运算
 """
-sumValue = 10 + 5
+sumValue = 10 + 50
 subValue = 10 - 3
 mulValue = 10 * 2
 divValue = 10 / 2
