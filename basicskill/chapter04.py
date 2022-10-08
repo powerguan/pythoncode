@@ -15,7 +15,7 @@ class Student:
     __weight = 0.0  #体重(私有,private)
     """
     构造函数会在创建对象时自动调用
-        def __init__(self, name, gender, age, favorite):
+    def __init__(self, name, gender, age, favorite):
         self.name = name
         self.gender = gender
         self.age = age
@@ -42,6 +42,7 @@ class Student:
             return True
         else:
             return False
+        #return (self.favorite == "足球" or self.favorite == "篮球" or self.favorite == "排球")
 
     def sayHello(self, msg):
         """
@@ -69,7 +70,7 @@ class Student:
 
     def __eq__(self, other):
         """
-        等于比较函数
+        等于比较函数 恒等于
         :param other:
         :return:
         """
@@ -93,7 +94,7 @@ class Student:
 
 # 使用类来创建对象
 student1 = Student()
-student1.name = "小明"
+student1.name = "小m"
 student1.gender = "男"
 student1.age = 12
 student1.favorite = "足球"
@@ -104,7 +105,7 @@ student1.sayHello("你很帅啊")
 
 
 student2 = Student()
-student2.name = "小花"
+student2.name = "小h"
 student2.gender = "女"
 student2.age = 9
 student2.favorite = "乒乓球"
@@ -112,6 +113,7 @@ student1.setWeight(49)
 print(f"student2 is: {student2}")
 print(f"{student2.name} like {student2.favorite}, it's team sports: {student2.isTeamSports()}")
 student2.sayHello("可爱的小姑娘")
+
 
 """
 student3 = Student("杨杨", "男", "14", "篮球")
@@ -129,6 +131,8 @@ student1.setWeight(51)
 print(f"student2 is: {student4}")
 print(f"{student4.name} like {student4.favorite}, it's team sports: {student4.isTeamSports()}")
 student4.sayHello("可爱的小姑娘")
+
+
 
 #两个对象可以比较大小得益于我们实现了魔术方法 __le__
 if (student1 <= student2) :
@@ -150,7 +154,7 @@ class Phone:
     IMEI = "123" # 序列号
     producer = "Apple" # 厂商
 
-    def radioVersion(self):
+    def radioType(self):
         """
         返回手机支持的无线通信网路是几代的，例如2g, 3g, 4g, 5g
         :return:
@@ -163,7 +167,7 @@ class IPhone6(Phone):
     """
     faceID = "2016" #支持了面部识别
 
-    def radioVersion(self):
+    def radioType(self):
         return "4g"
 
 
@@ -192,7 +196,7 @@ class IPhone14(IPhone6, NFCReader, RemoteController):
 
     IMEI = "456"
 
-    def radioVersion(self):
+    def radioType(self):
         """
         重写了父类的函数
         :return:
@@ -204,10 +208,10 @@ class IPhone14(IPhone6, NFCReader, RemoteController):
         return self.IMEI
 
 iphone14 = IPhone14()
-print(f"radio version: {iphone14.radioVersion()}")
-print(f"radio version: {iphone14.readNFC()}")
-print(f"radio version: {iphone14.doRemoteControl()}")
-print(f"imei: {iphone14.getIMEI()}")
+print(f"radio version: {iphone14.radioType()}")
+print(f"call readNFC: {iphone14.readNFC()}")
+print(f"call remote controller: {iphone14.doRemoteControl()}")
+print(f"call getIMEI: {iphone14.getIMEI()}")
 
 class Animal:
     def bark(self) -> None :
@@ -223,11 +227,11 @@ class Dog(Animal):
     Animal有个抽象函数bark，子类必须自己来实现，否则会报错
     """
     def bark(self) -> None:
-        print(f"汪汪")
+        print(f"汪汪汪")
 
 class Cat(Animal):
     def bark(self) -> None:
-        print(f"喵喵")
+        print(f"喵喵喵")
 
 def doBark(animal: Animal) -> None:
     """

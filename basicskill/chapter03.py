@@ -31,7 +31,7 @@ def 函数名(参数列表):
 def calculateCylinderVolume(r : float, h: float) -> float :
     """
     该函数用于计算圆柱体体积，函数定义时参数叫形式参数简称形参
-    :param r: 圆柱体地面半径
+    :param r: 圆柱体底面半径
     :param h: 圆柱体高度
     :return: 圆柱体体积
     """
@@ -70,11 +70,11 @@ print(f"test no return function: {verifyNucleicAcid(8)}")
 # 参数默认值 和 返回多个值的函数
 def checkNucleicAcid(days=3):
     if days > RedCodeDays:
-        return "红码", "立即隔离"
+        return ("红码", "立即隔离")
     elif days > YellowCodeDays:
-        return "黄码", "拒绝进入"
+        return ("黄码", "拒绝进入")
     else:
-        return "绿码", "欢迎光临"
+        return ("绿码", "欢迎光临")
 
 
 print(f"call func with default parameter: {checkNucleicAcid()}")
@@ -111,14 +111,16 @@ begTime = time.time()
 fibNum = 10
 print(f"fibonacci({fibNum}) = {fibonacci(fibNum)}")
 endTime = time.time()
-print(f"calc {fibNum}, time cost: {endTime - begTime}")
+print(f"calc {fibNum}, time cost: {endTime - begTime}, call counter1: {callCounter}")
 
 # 用一个字典保存计算过的值
 fibonacciDict = dict({})
 
-
+callCounter = 0 # reset call counter
 def fibonacci2(n):
     global fibonacciDict
+    global callCounter
+    callCounter += 1
     if n == 0 or n == 1:
         return 1
     else:
@@ -132,7 +134,7 @@ begTime = time.time()
 fibNum = 200  # 毕竟是递归函数，不支持过深的递归调用
 print(f"fibonacci({fibNum}) = {fibonacci2(fibNum)}")
 endTime = time.time()
-print(f"calc {fibNum}, time cost: {endTime - begTime}")
+print(f"calc {fibNum}, time cost: {endTime - begTime}, call counter2: {callCounter}")
 
 # 非递归版本的斐波那契数列
 fibonacciDict = dict({})
@@ -152,10 +154,10 @@ def fibonacci3(n):
             n3 = 0
             while (i < n):
                 n3 = n1 + n2
+                fibonacciDict[i] = n3
                 n1 = n2
                 n2 = n3
                 i += 1
-                fibonacciDict[i] = n3
 
             return n3
 
@@ -202,7 +204,8 @@ mixDict = dict({
     '成都': 30
 })
 import json
-jsonStr = json.dumps(mixDict) #json.dumps(mixDict, ensure_ascii=False)
+#jsonStr = json.dumps(mixDict) + "\n"
+jsonStr = json.dumps(mixDict, ensure_ascii=False)
 file.write(jsonStr)
 #file.flush()
 #file.write(jsonStr)
@@ -218,7 +221,8 @@ mixDict = dict({
     "朝阳": 32,
     "西城": 30
 })
-jsonStr = json.dumps(mixDict) #json.dumps(mixDict, ensure_ascii=False)
+jsonStr = json.dumps(mixDict) + "\n"
+#jsonStr = json.dumps(mixDict, ensure_ascii=False)
 file.write(jsonStr)
 
 #写文件时先缓存到内存，缓冲区快满了的时候才会往磁盘写入,如果想提前往磁盘写入可以用flush函数写入磁盘
@@ -226,6 +230,7 @@ file.write(jsonStr)
 #file.write(jsonStr)
 #step3 关闭
 file.close()
+
 
 #读文件
 #step1: open file
