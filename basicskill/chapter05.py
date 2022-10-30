@@ -9,7 +9,7 @@ num = 3             #无注解定义法
 num : int = 3       #有注解定义法
 
 num2 = 2.5          #无注解定义法
-num2 : float = 2.5  #有注解定义 法
+num2 : float = 2.5  #有注解定义法
 
 #无注解定义法
 def add (a, b):
