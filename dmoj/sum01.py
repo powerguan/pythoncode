@@ -51,12 +51,36 @@ Output: [0,1]
 
 """
 
-numbers = [2,11,7,15,2, 10, 7]
+numbers = [2,11,7]
 target = 9
 
 for i in range(0, len(numbers)-1):
     for k in range(i+1, len(numbers)):
         if (numbers[i] + numbers[k] == target):
             print(f"find them: {i}, {k}")
+
+
+"""
+从数组里找出和为target的两个数
+"""
+numbers = [8, 10 ,11, 1,  7, 3, 13, 19]
+target = 17
+# first: sort list
+numbers.sort()
+
+
+left = 0
+right = len(numbers) - 1
+while left < right:
+    leftValue = numbers[left]
+    rightValue = numbers[right]
+    if leftValue + rightValue == target:
+        print(f"find them: {leftValue} + {rightValue} = {target}")
+        break
+    elif leftValue + rightValue > target:
+        right = right -1
+    elif leftValue + rightValue < target:
+        left = left + 1
+
 
 
