@@ -30,7 +30,7 @@ Copy
 
 """
 
-numbers = [2, 3, 1, 4, 8, 7, 6, 8, 2, 4, 1]
+numbers = [100, 250, 500,100,600,700]
 
 print("==== print original result ====")
 for i in range(0, len(numbers)):
