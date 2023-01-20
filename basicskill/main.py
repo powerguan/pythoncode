@@ -7,6 +7,12 @@
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+    a = 'A'
+    b = 'B'
+    c = a + b
+    print(c)
+    data = "887669"
+    print(data[3:])
 
 
 # Press the green button in the gutter to run the script.

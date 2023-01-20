@@ -118,7 +118,7 @@ print(items)
 # len: 取字符串长度
 print("strValue = {len(strValue)}")
 print(f"strValue = {len(strValue)}") #字符串 插值法
-# [start:end:stpe]： 取子串操作
+# [start:end:stop]： 取子串操作
 strValue = "1234567890"
 print(f"{strValue[0:5:1]}")
 print(f"{strValue[0:5:2]}")
